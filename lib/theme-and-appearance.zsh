@@ -53,3 +53,4 @@ function get_scm_prompt () {
 
 # Load the theme
 source "$ZSH/themes/$ZSH_THEME.zsh-theme"
+
