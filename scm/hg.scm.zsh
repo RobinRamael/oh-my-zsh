@@ -5,11 +5,17 @@ function scm_in_hg_repo () {
 }
 
 function scm_hg_prompt_info {
-   out="$ZSH_THEME_SCM_PROMPT_PREFIX$(cat .hg/branch)$(parse_hg_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
-   if [[ ZSH_THEME_SCM_DISPLAY_NAME -eq 1 ]]; then
-         out="hg$out"
-   fi
-   echo $out
+    if [[ -f .hg/branch ]]; then
+        branch=$(cat .hg/branch)
+    else
+        branch="default"
+    fi
+
+    out="$ZSH_THEME_SCM_PROMPT_PREFIX$branch$(parse_hg_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
+    if [[ ZSH_THEME_SCM_DISPLAY_NAME -eq 1 ]]; then
+        out="hg$out"
+    fi
+    echo $out
 }
 
 
