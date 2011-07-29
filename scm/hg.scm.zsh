@@ -11,10 +11,7 @@ function scm_hg_prompt_info {
         branch="default"
     fi
 
-    out="$ZSH_THEME_SCM_PROMPT_PREFIX$branch$(parse_hg_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
-    if [[ ZSH_THEME_SCM_DISPLAY_NAME -eq 1 ]]; then
-        out="hg$out"
-    fi
+    out="hg$ZSH_THEME_SCM_PROMPT_PREFIX$branch$(parse_hg_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
     echo $out
 }
 

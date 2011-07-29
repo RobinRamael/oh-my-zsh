@@ -6,7 +6,7 @@ function scm_in_git_repo () {
 
 function scm_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  out="$ZSH_THEME_SCM_PROMPT_PREFIX${ref#refs/heads/}$(scm_parse_git_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
+  out="git$ZSH_THEME_SCM_PROMPT_PREFIX${ref#refs/heads/}$(scm_parse_git_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
   if [[ ZSH_THEME_SCM_DISPLAY_NAME -eq 1 ]]; then
         out="git$out"
   fi

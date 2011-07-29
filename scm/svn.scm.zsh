@@ -6,7 +6,7 @@ function scm_in_svn_repo() {
 
 function scm_svn_prompt_info {
     if [ -d .svn ]; then
-        out="$ZSH_THEME_SCM_PROMPT_PREFIX$(svn_get_repo_name)$(parse_svn_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
+        out="svn$ZSH_THEME_SCM_PROMPT_PREFIX$(svn_get_repo_name)$(parse_svn_dirty)$ZSH_THEME_SCM_PROMPT_SUFFIX"
         if [[ ZSH_THEME_SCM_DISPLAY_NAME -eq 1 ]]; then
               out="svn$out"
         fi
